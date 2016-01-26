@@ -1,0 +1,6 @@
+web:
+    links:
+        - redis
+    volumes:
+        - .:/app
+    command: ./node_modules/.bin/nodemon app.js

@@ -1,0 +1,11 @@
+redis:
+    extends: 
+        file: ../common/docker-compose.yml
+        service: redis
+
+web:
+    build: .
+    environment:
+        - REDISHOST=redis
+    ports:
+        - "3000:3000"

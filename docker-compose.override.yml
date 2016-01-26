@@ -1,0 +1,14 @@
+web:
+    extends:
+        file: ./services/web/docker-compose.yml
+        service: web
+    links:
+        - redis
+
+worker:
+    extends:
+        file: ./services/worker/docker-compose.yml
+        service: worker
+    links:
+        - redis
+        - mongodb

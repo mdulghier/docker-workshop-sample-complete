@@ -1,0 +1,5 @@
+redis:
+    image: redis
+
+mongodb:
+    image: mongo

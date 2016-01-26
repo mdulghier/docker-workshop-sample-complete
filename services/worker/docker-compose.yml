@@ -1,0 +1,14 @@
+redis:
+    extends:
+        file: ../common/docker-compose.yml
+        service: redis
+
+mongodb:
+    extends:
+        file: ../common/docker-compose.yml
+        service: mongodb
+
+worker:
+    build: .
+    env_file: ../../config/worker-env.list
+

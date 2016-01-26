@@ -1,0 +1,17 @@
+{
+  "name": "sample-worker",
+  "version": "1.0.0",
+  "description": "worker process, writing to the DB",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "run": "docker run --rm --env-file ../../config/worker-env.list mdulghier/workshop-worker:local"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bull": "^0.2.4",
+    "mongodb": "^1.4.34",
+    "nodemon": "^1.3.7"
+  }
+}

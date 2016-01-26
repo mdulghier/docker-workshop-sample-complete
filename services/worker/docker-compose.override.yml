@@ -1,0 +1,8 @@
+worker:
+    links:
+        - redis
+        - mongodb
+    volumes:
+        - .:/app
+    command: ./node_modules/.bin/nodemon app.js
+

@@ -1,0 +1,5 @@
+web:
+    image: mdulghier/workshop-web:latest
+    environment:
+        - NODE_ENV=production
+
