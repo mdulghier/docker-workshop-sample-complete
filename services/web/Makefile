@@ -21,12 +21,14 @@ run-fg:
 				-p 3000:3000 \
 				--env-file ../../config/web-env.list \
 				--name web \
+				--link redis:redis \
 				mdulghier/workshop-web:local
 
 run-bg:
 	docker run -d \
 				-p 3000:3000 \
 				--env-file ../../config/web-env.list \
+				--link redis:redis \
 				--name web \
 				mdulghier/workshop-web:local
 	

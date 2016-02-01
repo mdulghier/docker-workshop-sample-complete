@@ -12,10 +12,18 @@ build: install
 	docker build -t mdulghier/workshop-worker:local .
 
 run-fg:
-	docker run --rm --env-file ../../config/worker-env.list --name worker mdulghier/workshop-worker:local
+	docker run --rm \
+				--env-file ../../config/worker-env.list \
+				--link redis:redis \
+				--link mongodb:mongodb \
+				--name worker mdulghier/workshop-worker:local
 
 run-bg:
-	docker run -d --env-file ../../config/worker-env.list --name worker mdulghier/workshop-worker:local
+	docker run -d \
+				--env-file ../../config/worker-env.list \
+				--link redis:redis \
+				--link mongodb:mongodb \
+				--name worker mdulghier/workshop-worker:local
 	
 run: run-fg
 
